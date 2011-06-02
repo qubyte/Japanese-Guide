@@ -13,8 +13,8 @@ important   →  importance
 In Japanese these are easy to conjugate. い-adjectives lose the い and
 gain a さ. な-adjectives simply have a さ appended.
 
---------- --- ----------
+--------- --- --------------
 おいし**い**   →  おいし**さ**
 げんき        →  げんき**さ**
---------- --- ----------
+--------- --- --------------
 
