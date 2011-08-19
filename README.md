@@ -9,7 +9,7 @@ Ultimately I'd like to compile these notes into a reference ebook, or set of
 webpages etc.
 
 These notes are written in markdown, and should ideally be compiled with
-pandoc into other formats.
+[pandoc](http://johnmacfarlane.net/pandoc/) into other formats.
 
 Contributing
 ------------
