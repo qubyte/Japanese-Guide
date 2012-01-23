@@ -1,4 +1,8 @@
 ﻿-- handleRuby.hs
+-- The ruby element is new in HTML5, so only some browsers support it.
+-- Webkit browsers and newer versions of IE should have no problem.
+-- Firefox does not display ruby above kanji, but instead to the side
+-- in brackets (this is the fall-back behaviour).
 import Text.Pandoc
 
 handleRuby :: Inline -> Inline
