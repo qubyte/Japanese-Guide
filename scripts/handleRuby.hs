@@ -1,20 +1,19 @@
-﻿-- handleRuby.hs
--- The ruby element is new in HTML5, so only some browsers support it.
--- Webkit browsers and newer versions of IE should have no problem.
--- Firefox does not display ruby above kanji, but instead to the side
--- in brackets (this is the fall-back behaviour).
+-- handleRuby.hs
 import Text.Pandoc
-
-handleRuby :: Inline -> Inline
-handleRuby (Link (Str ruby : []) ('-':kanji,_)) = RawInline "html" rubyHtml
-  where rubyHtml = ("<ruby>" ++ kanji ++ "<rp>(</rp><rt>" ++ ruby ++ "</rt><rp>)</rp></ruby>")
-handleRuby x = x
-
-readDoc :: String -> Pandoc
-readDoc = readMarkdown defaultParserState
-
-writeDoc :: Pandoc -> String
-writeDoc = writeMarkdown defaultWriterOptions
-
+import System.Environment (getArgs)
+ 
+handleRuby :: String -> Inline -> Inline
+handleRuby "html" (Link (Str ruby : []) ('-':kanji,_)) = RawInline "html"
+ $ "<ruby>" ++ kanji ++ "<rp>(</rp><rt>" ++ ruby ++ "</rt><rp>)</rp></ruby>"
+handleRuby "latex" (Link (Str ruby : []) ('-':kanji,_)) = RawInline "latex"
+ $ "\\ruby{" ++ kanji ++ "}{" ++ ruby ++ "}"
+handleRuby "kanji" (Link txt ('-':kanji,_)) = Str kanji
+handleRuby "kana" (Link (Str ruby : []) ('-':kanji,_)) = Str ruby
+handleRuby _ x = x
+ 
 main :: IO ()
-main = interact (writeDoc . bottomUp handleRuby . readDoc)
+main = do
+ args <- getArgs
+ case args of
+   [format] -> interact $ jsonFilter $ bottomUp (handleRuby format)
+   _        -> error "Usage:  handleRuby (html|latex|kanji|kana)"
