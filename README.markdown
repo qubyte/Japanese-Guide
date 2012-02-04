@@ -12,6 +12,12 @@ These notes are written in markdown, and must be compiled with
 necessary because some time custom syntax is used, for example to express
 ruby text in a way that can be compiled to multiple output formates.
 
+## Converting these notes to other formats
+
+In order to convert these notes to other formats, they must be piped through
+a custom script called `handleRuby.hs`. In the scripts folder are some helper
+shell scripts that demonstrate how to use the haskell script.
+
 ## Contributing
 
 Before working with these notes, please ping me. I have a massive amount
