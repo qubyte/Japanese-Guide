@@ -8,9 +8,11 @@ Ultimately I'd like to compile these notes into a reference ebook, or set of
 webpages etc.
 
 These notes are written in markdown, and must be compiled with
-[pandoc](http://johnmacfarlane.net/pandoc/) into other formats. This is
-necessary because some time custom syntax is used, for example to express
-ruby text in a way that can be compiled to multiple output formates.
+[Pandoc](http://johnmacfarlane.net/pandoc/) into other formats. Specifically,
+it requires the development version of Pandoc. Instructions on installing
+Pandoc 1.9 can be found [https://github.com/jgm/pandoc/wiki/Installing-the-development-version-of-pandoc-1.9](here).
+This is necessary because some time custom syntax is used, for example to
+express ruby text in a way that can be compiled to multiple output formates.
 
 ## Converting these notes to other formats
 
