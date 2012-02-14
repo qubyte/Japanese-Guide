@@ -9,10 +9,7 @@ webpages etc.
 
 These notes are written in markdown, and must be compiled with
 [Pandoc](http://johnmacfarlane.net/pandoc/) into other formats. Specifically,
-it requires the development version of Pandoc. Instructions on installing
-Pandoc 1.9 can be found [here](https://github.com/jgm/pandoc/wiki/Installing-the-development-version-of-pandoc-1.9).
-This is necessary because some time custom syntax is used, for example to
-express ruby text in a way that can be compiled to multiple output formates.
+it requires Pandoc 1.9 or above, so check that you're up to date.
 
 ## Converting these notes to other formats
 
